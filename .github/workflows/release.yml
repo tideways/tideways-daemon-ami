@@ -1,0 +1,36 @@
+name: Release
+
+on:
+    push:
+        branches: ['main']
+
+# Necessary to deploy to AWS using OIDC
+# https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services
+permissions:
+    id-token: write # This is required for requesting the JWT for AWS
+    contents: read  # This is required for actions/checkout
+
+jobs:
+    release:
+        name: Release the AMI
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Checkout
+                uses: actions/checkout@v3
+
+            -   uses: hashicorp/setup-packer@v2
+                with:
+                    version: latest
+
+            -   name: Configure AWS credentials
+                uses: aws-actions/configure-aws-credentials@v1
+                with:
+                    role-to-assume: arn:aws:iam::601180370863:role/github-actions-ami-publisher
+                    role-session-name: github-actions-ami-publisher
+                    aws-region: us-east-1
+
+            -   run: packer init .
+
+            -   run: packer validate .
+
+            -   run: packer build .
