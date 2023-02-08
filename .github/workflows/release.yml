@@ -1,8 +1,8 @@
 name: Release
 
 on:
-    push:
-        branches: ['main']
+    release:
+        types: [published]
 
 # Necessary to deploy to AWS using OIDC
 # https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services
