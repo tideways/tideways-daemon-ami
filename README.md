@@ -10,8 +10,14 @@ To use the AMI, either:
 
 | Region    | AMI ID                |
 |-----------|-----------------------|
-| us-east-1 | ami-027f62c92cb307944 |
-| eu-west-1 | ami-0c498a263c53d96d2 |
+| us-east-1 | ami-0ab763059fbb3e24d |
+| eu-west-1 | ami-0f47ce7e3644a8c3f |
+
+Refresh the list above by running:
+
+```
+aws ec2 describe-images --filters 'Name=name,Values=tideways-daemon' --owners='601180370863' --query='Images[*].[ImageId]' --output=text --region=xxx
+```
 
 ## How it works
 
