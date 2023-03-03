@@ -20,8 +20,28 @@ source "amazon-ebs" "tideways-daemon" {
   ami_groups = ["all"]
   # Publish the AMI in the following regions
   ami_regions = [
+    // US
     "us-east-1",
+    "us-east-2",
+    "us-west-1",
+    "us-west-2",
+    // Canada
+    "ca-central-1",
+    // Europe
     "eu-west-1",
+    "eu-west-2",
+    "eu-west-3",
+    "eu-central-1",
+    "eu-north-1",
+    // South America
+    "sa-east-1",
+    // Asia Pacific
+    "ap-northeast-1",
+    "ap-northeast-2",
+    "ap-northeast-3",
+    "ap-southeast-1",
+    "ap-southeast-2",
+    "ap-south-1",
   ]
   # These 2 settings allow overwriting the AMI if it already exists
   # https://developer.hashicorp.com/packer/plugins/builders/amazon/ebs#force_deregister
