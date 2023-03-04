@@ -30,6 +30,8 @@ jobs:
                     aws-region: us-east-1
 
             -   run: packer init .
+                env:
+                  PACKER_GITHUB_API_TOKEN: ${{ env.GITHUB_TOKEN }}
 
             -   run: packer validate .
 
