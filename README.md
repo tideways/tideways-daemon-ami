@@ -10,8 +10,23 @@ To use the AMI, either:
 
 | Region    | AMI ID                |
 |-----------|-----------------------|
-| us-east-1 | ami-0ab763059fbb3e24d |
-| eu-west-1 | ami-0f47ce7e3644a8c3f |
+| us-east-1 | ami-07f65b3cf1dbe83e0 |
+| us-east-2 | ami-0682cf12179b408cf |
+| us-west-1 | ami-0820fc5dc564c0e59 |
+| us-west-2 | ami-0164dde09d9c8ee39 |
+| ca-central-1 | ami-0edd27efbce1ccba3 |
+| eu-west-1 | ami-0de7fc73978c4a64e |
+| eu-west-2 | ami-02606eb4fdcfad3a3 |
+| eu-west-3 | ami-05903fecc3810610a |
+| eu-central-1 | ami-0f1d41377c06ee5e8 |
+| eu-north-1 | ami-0436f9823f2a9b5bf |
+| sa-east-1 | ami-096ea12b148055a94 |
+| ap-northeast-1 | ami-0b11f0a0b285abd58 |
+| ap-northeast-2 | ami-0ffa23a9865810666 |
+| ap-northeast-3 | ami-01734b9e496f2c0e0 |
+| ap-southeast-1 | ami-0cafbf066a364e8e0 |
+| ap-southeast-2 | ami-0e6dea52928ac4850 |
+| ap-south-1 | ami-082d2f6ae700b0b1d |
 
 Refresh the list above by running:
 
