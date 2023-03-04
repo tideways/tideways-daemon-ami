@@ -9,4 +9,4 @@ This needs to be done once in the AWS console (because no access keys have permi
 - [create stack](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create)
 - file: `github-role.yml`
 - stack name: github-oidc-provider
-- `FullRepoName` parameter: `mnapoli/tideways-daemon-ami`
+- `FullRepoName` parameter: `tideways/tideways-daemon-ami`
