@@ -11,7 +11,7 @@ packer {
 # This defines the AMI we are creating
 source "amazon-ebs" "tideways-daemon" {
   ami_name        = "tideways-daemon"
-  ami_description = "Tideways daemon"
+  ami_description = "Official tideways-daemon AMI by Tideways GmbH. Run this in a VPC connected to PHP servers or Lambda via bref. More information https://support.tideways.com/documentation/setup/installation/tideways-daemon-ami.html"
   tags = {
     Name = "Tideways daemon"
   }
