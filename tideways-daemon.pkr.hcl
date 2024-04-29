@@ -79,6 +79,7 @@ build {
       "sudo apt update",
       "sudo apt install -y tideways-daemon",
       "echo 'TIDEWAYS_DAEMON_EXTRA=\"--address=0.0.0.0:9135\"' | sudo tee /etc/default/tideways-daemon",
+      "echo 'TIDEWAYS_SOURCE=\"ami\"' | sudo tee -a /etc/default/tideways-daemon",
       "sudo service tideways-daemon restart",
     ]
   }
