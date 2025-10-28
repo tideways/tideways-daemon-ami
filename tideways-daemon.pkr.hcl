@@ -52,8 +52,8 @@ source "amazon-ebs" "tideways-daemon" {
   region        = "eu-west-1"
   source_ami_filter {
     filters = {
-      # Starts from Ubuntu 20.04
-      name                = "ubuntu/images/*ubuntu-focal-20.04-amd64-server-*"
+      # Starts from Ubuntu 24.04
+      name                = "ubuntu/images/*ubuntu-noble-24.04-amd64-server-*"
       root-device-type    = "ebs"
       virtualization-type = "hvm"
     }
@@ -70,14 +70,19 @@ build {
     "source.amazon-ebs.tideways-daemon"
   ]
 
+  provisioner "file" {
+    source="tideways.sources"
+    destination="/tmp/tideways.sources"
+  }
+
   provisioner "shell" {
     inline = [
       # Install the daemon
       # See https://support.tideways.com/documentation/setup/installation/debian-ubuntu.html
-      "echo 'deb https://packages.tideways.com/apt-packages-main any-version main' | sudo tee /etc/apt/sources.list.d/tideways.list",
-      "wget -qO - https://packages.tideways.com/key.gpg | sudo apt-key add -",
-      "sudo apt update",
-      "sudo apt install -y tideways-daemon",
+      "sudo mv /tmp/tideways.source /etc/apt/sources.list.d./tideways.sources",
+      "sudo chown root:root /etc/apt/sources.list.d./tideways.sources",
+      "sudo apt-get update",
+      "sudo apt-get install -y tideways-daemon",
       "echo 'TIDEWAYS_DAEMON_EXTRA=\"--address=0.0.0.0:9135\"' | sudo tee /etc/default/tideways-daemon",
       "echo 'TIDEWAYS_SOURCE=\"ami\"' | sudo tee -a /etc/default/tideways-daemon",
       "sudo service tideways-daemon restart",
