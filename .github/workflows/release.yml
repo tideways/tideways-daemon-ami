@@ -23,7 +23,7 @@ jobs:
                     version: latest
 
             -   name: Configure AWS credentials
-                uses: aws-actions/configure-aws-credentials@v1
+                uses: aws-actions/configure-aws-credentials@v5
                 with:
                     role-to-assume: arn:aws:iam::601180370863:role/github-actions-ami-publisher
                     role-session-name: github-actions-ami-publisher
