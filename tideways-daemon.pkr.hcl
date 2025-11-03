@@ -79,8 +79,8 @@ build {
     inline = [
       # Install the daemon
       # See https://support.tideways.com/documentation/setup/installation/debian-ubuntu.html
-      "sudo mv /tmp/tideways.source /etc/apt/sources.list.d./tideways.sources",
-      "sudo chown root:root /etc/apt/sources.list.d./tideways.sources",
+      "sudo mv /tmp/tideways.source /etc/apt/sources.list.d/tideways.sources",
+      "sudo chown root:root /etc/apt/sources.list.d/tideways.sources",
       "sudo apt-get update",
       "sudo apt-get install -y tideways-daemon",
       "echo 'TIDEWAYS_DAEMON_EXTRA=\"--address=0.0.0.0:9135\"' | sudo tee /etc/default/tideways-daemon",
