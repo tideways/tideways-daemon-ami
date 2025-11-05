@@ -10,28 +10,33 @@ To use the AMI, either:
 
 | Region    | AMI ID                |
 |-----------|-----------------------|
-| us-east-1 | ami-07f65b3cf1dbe83e0 |
-| us-east-2 | ami-0682cf12179b408cf |
-| us-west-1 | ami-0820fc5dc564c0e59 |
-| us-west-2 | ami-0164dde09d9c8ee39 |
-| ca-central-1 | ami-0edd27efbce1ccba3 |
-| eu-west-1 | ami-0de7fc73978c4a64e |
-| eu-west-2 | ami-02606eb4fdcfad3a3 |
-| eu-west-3 | ami-05903fecc3810610a |
-| eu-central-1 | ami-0f1d41377c06ee5e8 |
-| eu-north-1 | ami-0436f9823f2a9b5bf |
-| sa-east-1 | ami-096ea12b148055a94 |
-| ap-northeast-1 | ami-0b11f0a0b285abd58 |
-| ap-northeast-2 | ami-0ffa23a9865810666 |
-| ap-northeast-3 | ami-01734b9e496f2c0e0 |
-| ap-southeast-1 | ami-0cafbf066a364e8e0 |
-| ap-southeast-2 | ami-0e6dea52928ac4850 |
-| ap-south-1 | ami-082d2f6ae700b0b1d |
+| us-east-1 | ami-0745f53b30dee1da0 |
+| us-east-2 | ami-09a9452d5dc73b16e |
+| us-west-1 | ami-06e9be7060d9d73b5 |
+| us-west-2 | ami-0249de177862ed370 |
+| ca-central-1 | ami-0b72999bef36c3289 |
+| eu-west-1 | ami-0ad66fb5f377b2880 |
+| eu-west-2 | ami-07be17b51f12ab23d |
+| eu-west-3 | ami-094bf9a2c06706506 |
+| eu-central-1 | ami-00ff596413bd5db58 |
+| eu-north-1 | ami-071ce88b50eb082c7 |
+| sa-east-1 | ami-0e53c6c54b83a5860 |
+| ap-northeast-1 | ami-0f5b90f99c90ef4d2 |
+| ap-northeast-2 | ami-06c80393a378990ec |
+| ap-northeast-3 | ami-04cde2246a7a973c9 |
+| ap-southeast-1 | ami-0a3501e5a5fd3b1ab |
+| ap-southeast-2 | ami-082f02486897974eb |
+| ap-south-1 | ami-051234e9428424b58 |
 
-Refresh the list above by running:
+To get the AMI ID for your region, you can alternatively run:
 
 ```
-aws ec2 describe-images --filters 'Name=name,Values=tideways-daemon' --owners='601180370863' --query='Images[*].[ImageId]' --output=text --region=xxx
+aws ec2 describe-images \
+    --filters 'Name=name,Values=tideways-daemon' \
+    --owners='601180370863' \
+    --query='Images[*].[ImageId]' \
+    --output=text \
+    --region=YOUR_REGION_NAME
 ```
 
 ## How it works
